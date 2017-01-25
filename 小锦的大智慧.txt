@@ -1,0 +1,31 @@
+﻿														
+1: <%@ page import=""%>的用法													
+														
+	<jsp:directive.page import="hp.common.CategoryTrns"/> 													
+	   相当于 													
+	<%@page import="hp.common.CategoryTrns"%>（主要作用是引入要用到的类）													
+														
+	 但是也有区别：两个用法的作用范围不同，													
+														
+	<%@ page import="hp.common.CategoryTrns" %> 可用于多个页面内而		
+												
+	<jsp:directive.page import="hp.common.CategoryTrns"/>只能用于一个页面，不能跨页调用。
+														
+	 例如：如果你把所有类包的引入放在一个JSP中，在其他jsp中通include引入那个jsp。这时引入类就必须采用
+         <%@ page import="hp.common.CategoryTrns" %> 这样的写法。																									
+	<jsp:directive.page import="hp.common.CategoryTrns"/>这种写法只能在同一个jsp页面中使用，不能跨页调用	
+
+
+2. 异常处理一般有2种方式，要么捕获异常try-catch,要么抛出异常throws
+
+   如果一个方法后面抛出一个运行时期异常（throws RuntimeException），调用者无须处理
+
+   如果一个方法后面抛出一个编译时期异常，调用者必须处理，或者抛出或者try-catch；
+
+   运行时期的异常一般都不处理，一般是程序逻辑上的错误，比如分母为0作为除数了。。。
+
+    注意如果在try里面出现了异常后，try下面的语句就不会执行，回去寻找catch匹配异常处理会，接下来的语句会处理的(也就是在try-catch-finally    之后的语句会继续执行)
+
+												
+														
+						
